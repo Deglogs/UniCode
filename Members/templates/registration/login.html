@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block base %}
+
+<h1>Login</h1>
+<br><br>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-secondary">Login</button>
+    <br><br>
+    <h5>Don't have an acocount. Try <a href="{% url 'register' %}">register</a></h5>
+</form>
+
+
+
+{% endblock %}
