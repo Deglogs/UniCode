@@ -15,6 +15,7 @@ class Post(models.Model):
     author=models.ForeignKey(User,on_delete=models.CASCADE)
     blog_datetime=models.DateTimeField(auto_now_add=True)
     thumbnail=models.ImageField(null=True,blank=True,upload_to="images/")
+    category=models.CharField(max_length=250,default='uncategorized')
 
     def __str__(self):
         return self.title+' | '+str(self.author)
@@ -29,13 +30,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.user.username
-    
+'''    
 class Category(models.Model):
-    title=models.CharField(max_length=25)
-    subtitle=models.CharField(max_length=50)
-    slug=models.SlugField()
+    name=models.CharField(max_length=250)
 
     def __str__(self):
-        return self.title
-
-        '''
+        return self.name
+    
+    def get_absolute_url(self):
+        return reverse('home')

@@ -7,7 +7,7 @@
 
 
 <h1>{{post.title}}</h1>
-<small>{{post.author.first_name}} {{post.author.last_name}} - {{post.blog_datetime|date:'d-M-Y'}} 
+<small>{{post.author.first_name}} {{post.author.last_name}} - {{post.blog_datetime|date:'d-M-Y'}} - {{post.category}}
     {% if user.is_authenticated and post.author.id == user.id %}
         - <a href="{% url 'editpost' post.pk %}">(Edit)</a> <a href="{% url 'deletepost' post.pk %}">(Delete)</a>
     {% endif %}

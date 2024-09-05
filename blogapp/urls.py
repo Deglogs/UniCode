@@ -7,6 +7,7 @@ urlpatterns = [
     path('about/',AboutView,name='about'),
     path('article/<int:pk>',ArticleDetail.as_view(),name='article'),
     path('post/',AddPostView.as_view(),name='addpost'),
+    path('category/',AddCategoryView.as_view(),name='addcategory'),
     path('aritcle/edit/<int:pk>',EditPost.as_view(),name='editpost'),
     path('aritcle/<int:pk>/delete',DeletePost.as_view(),name='deletepost'),
 ]

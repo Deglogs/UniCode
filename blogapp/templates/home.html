@@ -10,7 +10,7 @@
 <h1><center>Home</center></h1>
 <ul>
 {% for post in object_list %}
-    <li><a href="{% url 'article' post.pk %}">{{post.title}}</a> - {{post.author.first_name}} {{post.author.last_name}} - {{post.blog_datetime|date:'d-M-Y'}} 
+    <li><a href="{% url 'article' post.pk %}">{{post.title}}</a> - {{post.category}} - {{post.author.first_name}} {{post.author.last_name}} - {{post.blog_datetime|date:'d-M-Y'}} 
         {% if user.is_authenticated and post.author.id == user.id %}
          | <small><a href="{% url 'editpost' post.pk %}">(Edit)</a></small> | <small><a href="{% url 'deletepost' post.pk %}">(Delete)
         {%  endif %}</a></small><br>
