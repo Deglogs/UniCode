@@ -10,4 +10,5 @@ urlpatterns = [
     path('category/',AddCategoryView.as_view(),name='addcategory'),
     path('aritcle/edit/<int:pk>',EditPost.as_view(),name='editpost'),
     path('aritcle/<int:pk>/delete',DeletePost.as_view(),name='deletepost'),
+    path('category/<str:cats>',CategoryView,name='category'),
 ]
